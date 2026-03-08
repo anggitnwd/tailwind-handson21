@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Dark mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+/* =========================
+   CUSTOM COMPONENT
+========================= */
+
+@layer components{
+
+  /* reusable card */
+  .feature-card{
+    @apply bg-white border rounded-xl p-6 transition duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* primary button */
+  .btn-primary{
+    @apply bg-black text-white px-5 py-3 rounded-lg hover:scale-105 transition;
+  }
+
+  /* secondary button */
+  .btn-secondary{
+    @apply border px-5 py-3 rounded-lg hover:bg-gray-100 transition;
+  }
+
+}
+
+
+/* =========================
+   CUSTOM THEME COLOR
+========================= */
+
+@theme{
+    --color-primary: var(--primary);
+    --color-background: var(--background);
+    --color-secondary: var(--secondary);
+    --color-danger: var(--danger);
+    --color-warm: var(--warm);
+    --color-text-color: var(--text-color);
+}
+
+
+/* =========================
+   DARK MODE COLOR
+========================= */
+
+.dark{
+    --primary : #0A2647;
+    --background : #144272;
+    --secondary : #205295;
+    --danger : #2C74B3;
+    --warm : #1C0C5B;
+    --text-color : #8FD6E1;
+}
+
+
+/* =========================
+   LIGHT MODE COLOR
+========================= */
+
+:root{
+    --primary : #F875AA;
+    --background : #FBEFEF;
+    --secondary : #F9DFDF;
+    --danger : #F5AFAF;
+    --warm : #FCF8F8;
+}
+
+
+/* =========================
+   GLOBAL STYLE
+========================= */
+
+body{
+   color: var(--text-color);
+   background: #f9fafb;
+}
